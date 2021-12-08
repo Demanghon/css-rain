@@ -1,0 +1,42 @@
+:root{
+    --drop-radius: 3px;
+    --drop-height: 200px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: black;
+    box-sizing: content-box;
+}
+
+i {
+    height: var(--drop-height);
+    background: linear-gradient(transparent, white);
+    position:absolute;
+    border-bottom-left-radius: var(--drop-radius);
+    border-bottom-right-radius: var(--drop-radius);
+    animation: animate 5s linear infinite;
+}
+
+i:nth-child(3n+1){
+    background: linear-gradient(transparent, #0ff);
+}
+i:nth-child(3n+2){
+    background: linear-gradient(transparent, #0f0);
+}
+i:nth-child(3n+3){
+    background: linear-gradient(transparent, #f00);
+}
+
+@keyframes animate {
+    from {
+        transform: translateY(calc(0px - var(--drop-height)));
+    }
+
+    to{
+        transform: translateY(calc(100vh + var(--drop-height)));
+    }
+}
+
